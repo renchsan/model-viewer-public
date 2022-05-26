@@ -1,0 +1,192 @@
+<html>
+	<head>
+		<title> Model-Viewer Bootstrap </title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="./hotspot.css">
+
+		<!-- The following libraries and polyfills are recommended to maximize browser support -->
+		<!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+		<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+		<!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+		<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+		<!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+		<script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+		<script src="https://unpkg.com/focus-visible@5.1.0/dist/focus-visible.js"></script>
+		<!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
+		<script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+		<!-- Import the component -->
+		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+		<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+		<script src="./hotspots.js"></script>
+	</head>
+	<body>
+		<div class="card">
+			<model-viewer
+				src = "./beyondcontrol_V08.glb"
+				ios-src = "./beyondcontrol_V08_ems.usdz"
+				camera-controls
+				camera-orbit="40deg 95deg 70%"
+				auto-rotate
+				ar
+				ar-modes="webxr scene-viewer quick-look"
+				exposure="2"
+				min-camera-orbit="auto auto 0.1719m"
+				max-camera-orbit="auto auto auto"
+				min-field-of-view="37.3deg"
+				max-field-of-view="auto"
+				environment-image = "./hdri_1k.hdr"
+				onmouseover="stopWiggle()"
+				onmouseout="startWiggle()"
+				>
+
+				<button id="btn-toggle" onclick="toggleHotspots()"></button>
+
+				<button
+						onmouseover="hs_show('d_1')" onmouseout="hs_hide('d_1')" class="Hotspot hs-element"
+						slot="hotspot-1"
+						data-position="-0.07543443829323311m 0.048888386723738436m -0.032056322350237004m"
+						data-normal="-0.8828520585442311m 0.04838079891430598m 0.46715258858388775m"
+						data-visibility-attribute="visible">
+					<div class="HotspotAnnotation"></div>
+				</button>
+				<div id="d_1" class="hs hs-element">
+					<p class="ex2">
+						<span class="font_t">
+							Scoop® Ventilation
+						</span>
+					</p>
+					<div class="info-content">
+						<p class="ex1">
+							<span class="font_b">
+								Increases air flow + decreases fog-causing sweat and moisture
+							</span>
+						</p>
+					</div>
+				</div>
+
+
+				<button
+						onmouseover="hs_show('d_2')" onmouseout="hs_hide('d_2')" class="Hotspot hs-element"
+						class="Hotspot"
+						slot="hotspot-2"
+						data-position="-0.061515079515236076m 0.016289080803384745m -0.02660013609969633m"
+						data-normal="-0.564887403662346m -0.06584460002302676m 0.8225367528757735m"
+						data-visibility-attribute="visible">
+				</button>
+				<div id="d_2" class="hs hs-element">
+					<p class="ex2">
+                <span class="font_t">
+                    Polarized Lenses
+                </span>
+					</p>
+					<div class="info-content">
+						<p class="ex2">
+                <span class="font_b">
+					Blocks 99%+ surface glare + sealed to prevent scratching and hazing</span>
+						</p>
+					</div>
+				</div>
+
+				<button
+						onmouseover="hs_show('d_3')" onmouseout="hs_hide('d_3')" class="Hotspot hs-element"
+						class="Hotspot"
+						slot="hotspot-3"
+						data-position="0.021725181238863356m 0.0511194904979001m -0.007333925065853675m"
+						data-normal="0.19037954839543267m -0.08787506008791972m 0.9777697077365896m"
+						data-visibility-attribute="visible">
+				</button>
+				<div id="d_3" class="hs hs-element">
+					<p class="ex3">
+						<span class="font_t">
+							Happy™ Lens Tech
+						</span>
+					</p>
+					<div class="info-content">
+						<p class="ex3">
+							<span class="font_b">
+								Scientifically tuned to boost mood and alertness while enhancing colors
+							</span>
+						</p>
+					</div>
+				</div>
+
+				<button
+						onmouseover="hs_show('d_4')" onmouseout="hs_hide('d_4')" class="Hotspot hs-element"
+						class="Hotspot"
+						slot="hotspot-4"
+						data-position="0.021296701008444593m 0.051525971218762776m -0.009697364635263162m"
+						data-normal="-0.195335201330919m 0.08418266691916289m -0.9771169007398177m"
+						data-visibility-attribute="visible">
+				</button>
+				<div id="d_4" class="hs hs-element">
+					<p class="ex4">
+						<span class="font_t">
+							ARC® Lenses
+						</span>
+					</p>
+					<div class="info-content">
+						<p class="ex4">
+						<span class="font_b">
+							Tapered to follow the curve of the eye, providing distortion-free vision while reducing eye strain
+						</span>
+						</p>
+					</div>
+				</div>
+
+				<button
+						onmouseover="hs_show('d_5')" onmouseout="hs_hide('d_5')" class="Hotspot hs-element"
+						class="Hotspot"
+						slot="hotspot-5"
+						data-position="-0.00745140070490786m 0.03217986215951381m -0.017005775798460965m"
+						data-normal="-0.0017356917519428627m 0.3255222702660076m -0.945532780465599m"
+						data-visibility-attribute="visible">
+				</button>
+				<div id="d_5" class="hs hs-element">
+					<p class="ex5">
+						<span class="font_t">
+							Rubber Nose Pads
+						</span>
+					</p>
+					<div class="info-content">
+						<p class="ex5">
+							<span class="font_b">
+								Help to provide a secure fit, no matter how hard you sweat
+							</span>
+						</p>
+					</div>
+				</div>
+
+				<button
+						onmouseover="hs_show('d_6')" onmouseout="hs_hide('d_6')" class="Hotspot hs-element"
+						class="Hotspot"
+						slot="hotspot-6"
+						data-position="-0.07617755215499156m 0.04121825960492538m -0.14301739250812928m"
+						data-normal="-0.9583608149687872m 0.08486686890129692m -0.2726575927702217m"
+						data-visibility-attribute="visible">
+				</button>
+				<div id="d_6" class="hs hs-element">
+					<p class="ex6">
+						<span class="font_t">
+							Grilamid® Frames
+						</span>
+					</p>
+					<div class="info-content">
+						<p class="ex6">
+							<span class="font_b">
+								A lightweight material ideal for everyday wear
+							</span>
+						</p>
+					</div>
+				</div>
+
+				<div class="progress-bar hide" slot="progress-bar">
+					<div class="update-bar"></div>
+				</div>
+
+			</model-viewer>
+
+		</div>
+	</body>
+</html>
